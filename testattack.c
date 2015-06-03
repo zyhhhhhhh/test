@@ -1,6 +1,7 @@
 /*this is a test code
 It's aim is to exploit and recreate possible Venom attack on QEMU before patch
 6/2/2015  Yihao Zhang*/
+#include<stdio.h>
 #include<sys/io.h>
 #define FIFO 0x3f5
 #define RDID 0x0a
