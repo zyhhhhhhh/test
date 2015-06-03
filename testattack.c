@@ -12,6 +12,7 @@ void main(void){
         ioperm(0x3f5, 1, 1);
 	printf("write spc_command to port\n");
         outb(RDID, FIFO);
+        printf("write spc_command to portaa\n");
         int i,j;
         j = 0;
         printf("into loop\n");
