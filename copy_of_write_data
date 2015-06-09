@@ -48,3 +48,22 @@ static void fdctrl_write_data(FDCtrl *fdctrl, uint32_t value)
         pos = command_to_handler[value & 0xff]; 
         FLOPPY_DPRINTF("%s command\n", handlers[pos].name);
         fdctrl->data_len = handlers[pos].parameters + 1;
+        fdctrl->msr |= FD_MSR_CMDBUSY;
+    }
+
+    FLOPPY_DPRINTF("%s: %02x\n", __func__, value);
+    fdctrl->fifo[fdctrl->data_pos++] = value;
+    if (fdctrl->data_pos == fdctrl->data_len) {
+        /* We now have all parameters
+         * and will be able to treat the command
+         */
+        if (fdctrl->data_state & FD_STATE_FORMAT) {
+            fdctrl_format_sector(fdctrl);
+            return;
+        }
+
+        pos = command_to_handler[fdctrl->fifo[0] & 0xff];
+        FLOPPY_DPRINTF("treat %s command\n", handlers[pos].name);
+        (*handlers[pos].handler)(fdctrl, handlers[pos].direction);
+    }
+}

