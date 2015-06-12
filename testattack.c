@@ -19,5 +19,5 @@ int main(void){
         for(i=0; i<MAX_COUNT; i++ ){
                 outb(TEST_VAL,0x3f5);
         }
-        printf("try read: %d\n", inb(0x3f5));
+        // printf("try read: %d\n", inb(0x3f5));
 }
