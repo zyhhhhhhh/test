@@ -23,7 +23,7 @@ int main(void){
         //         outb(TEST_VAL,0x3f5);
         // }
         // outb(TEST_VAL, FIFO);
-        outb(WRITE, FIFO);
+        outb(RDID, FIFO);
         outb(TEST_VAL, FIFO);
         outb(FD_CMD_READ, FIFO);
         printf("try read: %d\n", inb(0x3f5));
