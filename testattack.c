@@ -25,6 +25,6 @@ int main(void){
         // outb(TEST_VAL, FIFO);
         // outb(RDID, FIFO);
         // outb(TEST_VAL, FIFO);
-        // outb(FD_CMD_READ, FIFO);
-        // printf("try read: %d\n", inb(0x3f5));
+        outb(FD_CMD_READ, FIFO);
+        printf("try read: %d\n", inb(0x3f5));
 }
