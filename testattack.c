@@ -15,14 +15,14 @@ int main(void){
         iopl(3);
         ioperm(FIFO, 1, 1);
 	// printf("write spc_command to port\n");
-        outb(SPC_COMMAND, FIFO);
+        // outb(SPC_COMMAND, FIFO);
         // int i,j;
         // j = 0;
         // printf("into loop\n");
         // for(i=0; i<MAX_COUNT; i++ ){
         //         outb(TEST_VAL,0x3f5);
         // }
-        outb(TEST_VAL, FIFO);
+        // outb(TEST_VAL, FIFO);
         outb(WRITE, FIFO);
         outb(TEST_VAL, FIFO);
         outb(FD_CMD_READ, FIFO);
