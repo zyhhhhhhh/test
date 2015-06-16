@@ -6,7 +6,7 @@ It's aim is to exploit and recreate possible Venom attack on QEMU before patch
 #define FIFO 0x3f5
 #define RDID 0x0a
 #define SPC_COMMAND 0x8e
-#define MAX_COUNT 1 
+#define MAX_COUNT 1000
 #define TEST_VAL  0x12
 #define FD_CMD_READ 0x06
 #define WRITE 0x05
