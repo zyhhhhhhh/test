@@ -24,7 +24,7 @@ int main(void){
         // }
         outb(TEST_VAL, FIFO);
         outb(WRITE, FIFO);
-        outb(TEST_VAL, FIFO;
+        outb(TEST_VAL, FIFO);
         outb(FD_CMD_READ, FIFO);
         printf("try read: %d\n", inb(0x3f5));
 }
