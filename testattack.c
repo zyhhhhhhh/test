@@ -26,7 +26,7 @@ int main(void){
         // }
         // for(i=0; i< 8; i++){
         //         outb(ctx[i], FIFO);
-        }
+        // }
         for(i=0; i< 8; i++){
                 outb(cb[i], FIFO);
         }
