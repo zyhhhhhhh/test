@@ -34,13 +34,13 @@ int main(void){
                 outb(cb[i], FIFO);
         }
         for(i=0; i< 8; i++){
-                outb(cb[i], FIFO);
+                outb(opaque[i], FIFO);
         }
         for(i=0; i< 8; i++){
-                outb(cb[i], FIFO);
+                outb(next[i], FIFO);
         }
-        for(i=0; i< 8; i++){
-                outb(cb[i], FIFO);
+        for(i=0; i< 3; i++){
+                outb(sid[i], FIFO);
         }
         // outb(TEST_VAL, FIFO);
         // outb(RDID, FIFO);
