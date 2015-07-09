@@ -21,11 +21,11 @@ int main(void){
         int i,j;
         j = 0;
         printf("into loop\n");
-        for(i=0; i<MAX_COUNT; i++ ){
-                outb(TEST_VAL,0x3f5);
-        }
-        for(i=0; i< 8; i++){
-                outb(ctx[i], FIFO);
+        // for(i=0; i<MAX_COUNT; i++ ){
+        //         outb(TEST_VAL,0x3f5);
+        // }
+        // for(i=0; i< 8; i++){
+        //         outb(ctx[i], FIFO);
         }
         for(i=0; i< 8; i++){
                 outb(cb[i], FIFO);
