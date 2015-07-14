@@ -51,18 +51,18 @@ int main(void){
         for(i=0; i< 8; i++){
             outb(ctx[i], FIFO);
         }
-        // for(i=0; i< 8; i++){
-        //     outb(cb[i], FIFO);
-        // }
-        // for(i=0; i< 8; i++){
-        //     outb(opaque[i], FIFO);
-        // }
-        // for(i=0; i< 8; i++){
-        //     outb(next[i], FIFO);
-        // }
-        // for(i=0; i< 3; i++){
-        //     outb(sid[i], FIFO);
-        // }
+        for(i=0; i< 8; i++){
+            outb(cb[i], FIFO);
+        }
+        for(i=0; i< 8; i++){
+            outb(opaque[i], FIFO);
+        }
+        for(i=0; i< 8; i++){
+            outb(next[i], FIFO);
+        }
+        for(i=0; i< 3; i++){
+            outb(sid[i], FIFO);
+        }
         // outb(TEST_VAL, FIFO);
         // outb(RDID, FIFO);
         // outb(TEST_VAL, FIFO);
