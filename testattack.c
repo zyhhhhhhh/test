@@ -44,25 +44,25 @@ int main(void){
             outb(code[i], FIFO);
         }
         //go to bh struct
-        for(i=0; i<j; i++){
-            outb(TEST_VAL, FIFO);
-        }
-        //start to rewrite bh struct
-        for(i=0; i< 8; i++){
-            outb(ctx[i], FIFO);
-        }
-        for(i=0; i< 8; i++){
-            outb(cb[i], FIFO);
-        }
-        for(i=0; i< 8; i++){
-            outb(opaque[i], FIFO);
-        }
-        for(i=0; i< 8; i++){
-            outb(next[i], FIFO);
-        }
-        for(i=0; i< 3; i++){
-            outb(sid[i], FIFO);
-        }
+        // for(i=0; i<j; i++){
+        //     outb(TEST_VAL, FIFO);
+        // }
+        // //start to rewrite bh struct
+        // for(i=0; i< 8; i++){
+        //     outb(ctx[i], FIFO);
+        // }
+        // for(i=0; i< 8; i++){
+        //     outb(cb[i], FIFO);
+        // }
+        // for(i=0; i< 8; i++){
+        //     outb(opaque[i], FIFO);
+        // }
+        // for(i=0; i< 8; i++){
+        //     outb(next[i], FIFO);
+        // }
+        // for(i=0; i< 3; i++){
+        //     outb(sid[i], FIFO);
+        // }
         // outb(TEST_VAL, FIFO);
         // outb(RDID, FIFO);
         // outb(TEST_VAL, FIFO);
