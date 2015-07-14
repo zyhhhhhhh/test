@@ -45,7 +45,7 @@ int main(void){
         }
         //go to bh struct
         for(i=0; i<j; i++){
-            outb(TEST_VAL, FIFO)
+            outb(TEST_VAL, FIFO);
         }
         //start to rewrite bh struct
         for(i=0; i< 8; i++){
