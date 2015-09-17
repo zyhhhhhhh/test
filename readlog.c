@@ -63,3 +63,9 @@ mprotect: 0x000000000007e4e0
 7ffff63dea20
 0x00007ffff63dea27 in mprotect
  0x00007ffff66b48d0 in mprotect@plt ()  this can redirect to 
+
+ now: 1st goto
+  5555558e82a5
+  parameter doesnt matter
+
+  then goto mprotect
