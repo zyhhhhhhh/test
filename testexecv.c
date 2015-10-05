@@ -5,14 +5,14 @@
 #define SPC_COMMAND 0x8e
 #define BH_COUNT 0x6ff
 #define SH_POSITION 0x1ff
-#define SH_COUNT 3
+#define SH_COUNT 7
 #define TEST_VAL  0x11
 #define FD_CMD_READ 0x06
 #define WRITE 0x05
 #define NUM_STRUCT 0x03
 #define STRUCT_LEN 0x28
 int main(void){
-        unsigned char code[] = {'l','s',0x00};
+        unsigned char code[] = {'/','b', 'i', 'n', '/', 'l','s',0x00};
         
         //bh1 change dl
         char ctx1[8] =   {0x00,0xcc,0x14,0x56,0x55,0x55,0x00,0x00};
