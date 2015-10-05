@@ -69,3 +69,5 @@ mprotect: 0x000000000007e4e0
   parameter doesnt matter
 
   then goto mprotect
+
+  execv : 0x7ffff63ab430
