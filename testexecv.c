@@ -5,7 +5,7 @@
 #define SPC_COMMAND 0x8e
 #define BH_COUNT 0x6ff
 #define SH_POSITION 0x1ff
-#define SH_COUNT 7
+#define SH_COUNT 8
 #define TEST_VAL  0x11
 #define FD_CMD_READ 0x06
 #define WRITE 0x05
