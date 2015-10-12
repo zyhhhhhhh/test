@@ -12,7 +12,7 @@
 #define NUM_STRUCT 0x03
 #define STRUCT_LEN 0x28
 int main(void){
-        unsigned char code[] = {'m','k','t','e','m','p','0'};
+        unsigned char code[] = {'m','k','t','e','m','p','\0'};
         
         //bh1 change dl
         char ctx1[8] =   {0x00,0xcc,0x14,0x56,0x55,0x55,0x00,0x00};
