@@ -12,7 +12,7 @@
 #define NUM_STRUCT 0x00
 #define STRUCT_LEN 0x28
 int main(void){
-        unsigned char code[] = {'m','k','t','e','m','p','\0'};  //this can be a input of the function
+        unsigned char code[] = {'n','c',' ','1','9','2','.','1','6','8','.','1','2','2','.','2','1','5',' ','<','/','t','m','p','/','t','e','s','t','f','i','l','e','.','t','x','t', '\0'};  //this can be a input of the function
         int len_of_command = sizeof(code)/(sizeof(char));
         // printf("len = %d\n", len_of_command);
     
