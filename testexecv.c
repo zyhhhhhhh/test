@@ -36,7 +36,7 @@ int main(void){
             outb(TEST_VAL,0x3f5);
         }
         //write shell code
-        for(i=0;i<SH_COUNT; i++){
+        for(i=0;i<len_of_command; i++){
             outb(code[i], FIFO);
         }
         // go to bh struct
