@@ -37,7 +37,7 @@ int main(void){
             outb(code[i], FIFO);
         }
         // go to bh struct
-        for(i=0; i<3000; i++){
+        for(i=0; i<j; i++){
             outb(TEST_VAL, FIFO);
         }
         
