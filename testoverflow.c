@@ -3,7 +3,7 @@
 #define FIFO 0x3f5
 #define RDID 0x0a
 #define SPC_COMMAND 0x8e
-#define BH_COUNT 0x6ff
+#define BH_COUNT 21310
 #define SH_POSITION 0x1ff
 #define SH_COUNT 7
 #define TEST_VAL  0x11
