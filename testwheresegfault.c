@@ -37,6 +37,7 @@ int main(void){
         //     outb(code[i], FIFO);
         // }
         // go to bh struct
+        int i;
         for(i=0; i<BH_COUNT; i++){
             outb(TEST_VAL, FIFO);
         }
