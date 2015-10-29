@@ -3,7 +3,7 @@
 #define FIFO 0x3f5
 #define RDID 0x0a
 #define SPC_COMMAND 0x8e
-#define BH_COUNT 21320
+#define BH_COUNT 0x5318
 #define SH_POSITION 0x1ff
 #define SH_COUNT 7
 #define TEST_VAL  0x11
@@ -42,19 +42,19 @@ int main(void){
         }
         
         //start to rewrite
-         for(i=0; i< 8; i++){
-            outb(ctx[i], FIFO);
-        }
-        for(i=0; i< 8; i++){
-            outb(cb[i], FIFO);
-        }
-        for(i=0; i< 8; i++){
-            outb(opaque[i], FIFO);
-        }
-        for(i=0; i< 8; i++){
-            outb(next[i], FIFO);
-        }
-        for(i=0; i< 3; i++){
-            outb(sid[i], FIFO);
-        }
+        //  for(i=0; i< 8; i++){
+        //     outb(ctx[i], FIFO);
+        // }
+        // for(i=0; i< 8; i++){
+        //     outb(cb[i], FIFO);
+        // }
+        // for(i=0; i< 8; i++){
+        //     outb(opaque[i], FIFO);
+        // }
+        // for(i=0; i< 8; i++){
+        //     outb(next[i], FIFO);
+        // }
+        // for(i=0; i< 3; i++){
+        //     outb(sid[i], FIFO);
+        // }
 }
