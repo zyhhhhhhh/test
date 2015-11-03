@@ -41,7 +41,7 @@ int main(void){
         }
         
         //start to rewrite
-        int k
+        int k;
         for(k=0; k<20; k++){
         	for(i=0; i< 8; i++){
 	            outb(irq[i], FIFO);
