@@ -27,7 +27,7 @@ int main(void){
         outb(SPC_COMMAND, FIFO);
        	
         int i;
-        j = BH_COUNT-len_of_command;
+        int j = BH_COUNT-len_of_command;
 
      
         //write command
